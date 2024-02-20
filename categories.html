@@ -1,282 +1,140 @@
 <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Responsive Image Gallery with Zurb Foundation</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/foundation-sites@6.6.3/dist/css/foundation.min.css">
+  <!-- <style>
 
-<html>
-  <head>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <title></title>
-    <meta name="description" content="" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="stylesheet" href="" />
-    <style>
-      ul {
-        list-style-type: none;
-        margin: 0;
-        padding: 0;
-        overflow: hidden;
-        background-color: #333;
-        position: -webkit-sticky;
-        position: sticky;
-        top: 0;
-      }
-      li img {
-        float: left;
-       
-        padding-right: 5px;
-      }
-      /* li {
-        float: right;
-      } */
 
-      li a {
-        display: block;
-        color: white;
+/* Styles for the navigation bar */
+.navbar {
+    background-color: #333;
+    display: flex;
+    justify-content: space-around;
+    padding: 10px;
+}
+
+.navbar a {
+    color: white;
+    text-decoration: none;
+}
+ 
+    /* Additional custom styles */
+    .gallery-item {
+      padding: 10px;
+    }
+
+    .gallery-item img {
+      max-width: 100%;
+      height: 100%;
+      display: block;
+      object-fit: cover;
+    }
+  </style> -->
+  <style>
+    .navbar {
+      background-color: #333;
+      color: #fff;
+      padding: 0.5rem 1rem;
+    }
+
+    .navbar-brand {
+      font-size: 1.5rem;
+      font-weight: bold;
+    }
+
+    .navbar-menu {
+      text-align: right;
+    }
+
+    .navbar-menu a {
+      color: #fff;
+      margin-left: 1rem;
+      text-decoration: none;
+    }
+
+    @media screen and (max-width: 640px) {
+      .navbar-menu {
         text-align: center;
-        padding: 14px 16px;
-        text-decoration: none;
+        margin-top: 1rem;
       }
 
-      li a:hover {
-        background-color: #6e5151;
-      }
-      li a, .dropbtn {
-  display: inline-block;
-  color: white;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
-}
-
-li a:hover, .dropdown:hover .dropbtn {
-  background-color: red;
-}
-
-li.dropdown {
-  display: inline-block;
-}
-
-.dropdown-content {
-  display: none;
-  position: absolute;
-  background-color: #f9f9f9;
-  min-width: 160px;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-  z-index: 1;
-}
-
-.dropdown-content a {
-  color: black;
-  padding: 12px 16px;
-  text-decoration: none;
-  display: block;
-  text-align: left;
-}
-
-.dropdown-content a:hover {background-color: #f1f1f1;}
-
-.dropdown:hover .dropdown-content {
-  display: block;
-}
-
-      /* styling of camera pictures */
-
-      div.grid-container {
-        /* margin: 5px;
-        border: 1px solid #ccc;
-        float: left;
-        width: 180px; */
-        background-color: #fffdfde8;
-        display: grid;
-        float: center;
-        border: 1px solid #ccc;
-        /* margin-bottom: 25px; */
-        margin-top: 25px;
-        margin-left: 35px;
-
-        /* column-gap: 50px; */
-        width: 400px;
-        height: 400px;
-        /* grid-template-columns: auto auto auto; */
-        padding: 50px;
-        border-radius: 20px;
-      }
-
-      div.grid-container:hover {
-        border: 1px solid #777;
-        background-color: azure;
-      }
-
-      div.grid-container img {
-        width: 100%;
-        height: 100%;
-        border-radius: 20px;
-      }
-      div.grid-container img:hover {
-        opacity: 0.2;
-      }
-
-      div.desc {
-        padding: 15px;
-        text-align: center;
-      }
-      * {
-        box-sizing: border-box;
-      }
-      div.desc:hover {
+      .navbar-menu a {
         display: block;
+        margin: 0.5rem 0;
       }
-    </style>
-  </head>
-  <body>
-    <ul>
-      <li style="float: right"><a href="about.asp">About</a></li>
-      <li style="float: right"><a href="default.asp">Lighting</a></li>
-      <li style="float: right"><a href="news.asp">Images</a></li>
-      <li style="float: right"><a href="contact.asp">video</a></li>
-      <li style="float: right"><a href="contact.asp">Image</a></li>
-      <li style="float: right"><a href="contact.asp">Audio</a></li>
-      <!-- <li class="dropdown" style="float: right">
-        <a href="javascript:void(0)" class="dropbtn">Dropdown</a>
-        <div class="dropdown-content">
-            <a href="default.asp">Lighting</a>
-            <a href="news.asp">Images</a>
-            <a href="contact.asp">video</a>
-            <a href="contact.asp">Image</a>
-            <a href="contact.asp">Audio</a>
+    }
+
+     /* Additional custom styles */
+     .gallery-item {
+      padding: 10px;
+    }
+
+    .gallery-item img {
+      max-width: 100%;
+      height: 100%;
+      display: block;
+      object-fit: cover;
+    }
+  </style>
+</head>
+<body style="background-color: rgb(2, 1, 16);">
+
+  <nav class="navbar">
+    <div class="grid-container">
+      <div class="grid-x align-middle">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="cell small-12 medium-6">
+          <div class="navbar-brand">
+            <img src="images/canon.png" alt="Company Logo" width="50"> <a href="categories.html">CAM_SHARE</a>
+          </div>
         </div>
-      </li> -->
-      <li>
-        <img
-          src="images/canon.png"
-          alt="Cinque Terre"
-          width="50px"
-          height="50px"
-          
-        />
-      </li>
-      <li style="float: left"><a href="contact.asp">CAM_SHARE</a></li>
 
-      <li>
-        <img src="images/profile.png" width="50px" height="50px"
-        style="float: right" />
-      </li>
-
-      
-    </ul>
-    <!-- body of camera starts from here -->
-    <div class="container" style="background-color: #777">
-      <div class="grid-container" style="display: inline-flex">
-        <div class="cell small-6">
-          <a target="_blank" href="img_5terre.jpg">
-            <img
-              src="images/canon.png"
-              alt="Cinque Terre"
-              width="400"
-              height="400"
-            />
-          </a>
-          <div class="desc">
-            <a href="">Read More</a>
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="cell small-12 medium-6">
+          <div class="navbar-menu">
+            <a href="about.asp">About</a>
+            <a href="listing.html">Listing</a>
+            <a href="image.html">Images</a>
+      <a href="contact.asp">video</a>
+      <a href="audio.html">Audio</a>
           </div>
         </div>
       </div>
-
-      <div class="grid-container" style="display: inline-flex; gap: 100px">
-        <div class="cell small-6">
-          <a target="_blank" href="img_forest.jpg">
-            <img
-              src="images/lenovo.png"
-              alt="Forest"
-              width="400"
-              height="400"
-            />
-          </a>
-          <div class="desc">Add a description of the image here</div>
-        </div>
-      </div>
-
-      <div class="grid-container" style="display: inline-flex; gap: 100px">
-        <div class="cell small-6">
-          <a target="_blank" href="img_lights.jpg">
-            <img
-              src="images/OIP.jpg"
-              alt="Northern Lights"
-              width="400"
-              height="400"
-            />
-          </a>
-          <div class="desc">Add a description of the image here</div>
-        </div>
-      </div>
-
-      <div class="grid-container" style="display: inline-flex; gap: 80px">
-        <div class="cell small-6">
-          <a target="_blank" href="img_mountains.jpg">
-            <img
-              src="images/Sony.png"
-              alt="Mountains"
-              width="400"
-              height="400"
-            />
-          </a>
-          <div class="desc">Add a description of the image here</div>
-        </div>
-      </div>
-      <div class="grid-container" style="display: inline-flex; gap: 100px">
-        <div class="cell small-6">
-          <a target="_blank" href="img_5terre.jpg">
-            <img
-              src="images/canon.png"
-              alt="Cinque Terre"
-              width="400"
-              height="400"
-            />
-          </a>
-          <div class="desc">Add a description of the image here</div>
-        </div>
-      </div>
-
-      <div class="grid-container" style="display: inline-flex; gap: 100px">
-        <div class="cell small-6">
-          <a target="_blank" href="img_forest.jpg">
-            <img
-              src="images/lenovo.png"
-              alt="Forest"
-              width="400"
-              height="400"
-            />
-          </a>
-          <div class="desc">Add a description of the image here</div>
-        </div>
-      </div>
-
-      <div class="grid-container" style="display: inline-flex; gap: 100px">
-        <div class="cell small-6">
-          <a target="_blank" href="img_lights.jpg">
-            <img
-              src="images/OIP.jpg"
-              alt="Northern Lights"
-              width="400"
-              height="400"
-            />
-          </a>
-          <div class="desc">Add a description of the image here</div>
-        </div>
-      </div>
-
-      <div class="grid-container" style="display: inline-flex; gap: 80px">
-        <div class="cell small-6">
-          <a target="_blank" href="img_mountains.jpg">
-            <img
-              src="images/Sony.png"
-              alt="Mountains"
-              width="400"
-              height="400"
-            />
-          </a>
-          <div class="desc">Add a description of the image here</div>
-        </div>
-      </div>
     </div>
-  </body>
+  </nav>
+
+
+<!-- Your image grid goes here -->
+  <div class="grid-container">
+    <div class="grid-x grid-margin-x">
+
+      <!-- Gallery Item 1 -->
+      <div class="cell small-6 medium-4 large-3 gallery-item">
+        <img src="images/lenovo.png" alt="Image 1">
+      </div>
+
+      <!-- Gallery Item 2 -->
+      <div class="cell small-6 medium-4 large-3 gallery-item">
+        <img src="images/OIP.jpg " alt="Image 2">
+      </div>
+
+      <!-- Gallery Item 3 -->
+      <div class="cell small-6 medium-4 large-3 gallery-item">
+        <img src="images/Sony.png" alt="Image 3">
+      </div>
+
+      <!-- Gallery Item 4 -->
+      <div class="cell small-6 medium-4 large-3 gallery-item">
+        <img src="images/canon.png" alt="Image 4">
+      </div>
+
+      <!-- Add more gallery items as needed -->
+
+    </div>
+  </div>
+
+</body>
 </html>

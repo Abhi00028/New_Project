@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sign Up Page</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.6.3/css/foundation.min.css">
+ <style>
+  /* Custom styles */
+.signup-container {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+form {
+  margin-top: 20px;
+}
+
+label {
+  font-weight: bold;
+}
+
+input[type="email"],
+input[type="password"] {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+button[type="submit"] {
+  width: 100%;
+  padding: 10px;
+  background-color: #007bff;
+  color: #fff;
+}
+
+button[type="submit"]:hover {
+  background-color: #0056b3;
+}
+
+ </style>
+</head>
+<body>
+
+  <div class="signup-container">
+    <div class="grid-container">
+      <div class="grid-x align-center">
+        <div class="cell small-12 medium-6">
+          <h2>Signup</h2>
+          <form action="categories.html" method="get" id="products-form"> 
+            <div class="grid-x grid-margin-x">
+              <div class="cell small-12">
+                <label>Email</label>
+                <input type="email" placeholder="Enter your email" required>
+              </div>
+              <div class="cell small-12">
+                <label>Password</label>
+                <input type="password" placeholder="Enter your password" required>
+              </div>
+              <div class="cell small-12">
+                <label> Confirm Password</label>
+                <input type="password" placeholder="Enter your password" required>
+              </div>
+              <div class="cell small-12">
+                <button type="submit" class="button">Signup</button>
+              </div>
+              <div class="cell small-12">
+                <lable>Already Have an Account?</lable>
+                <a href="signIn.html">Sign In</a>
+            </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>

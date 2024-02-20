@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Payment Page</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.7.3/css/foundation.min.css">
+  <style>
+    body {
+      padding-top: 50px;
+      /* background-color: rgb(2, 1, 16); */
+    }
+    .payment-container {
+      max-width: 600px;
+      margin: 0 auto;
+    }
+    .payment-form input[type="text"],
+    .payment-form input[type="number"],
+    .payment-form input[type="email"],
+    .payment-form select,
+    .payment-form textarea {
+      width: 100%;
+      padding: 10px;
+      font-size: 16px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+      margin-bottom: 20px;
+    }
+    .payment-form label {
+      font-weight: bold;
+    }
+    .payment-form input[type="submit"] {
+      background-color: #4CAF50;
+      color: white;
+      padding: 12px 20px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+    .payment-form input[type="submit"]:hover {
+      background-color: #45a049;
+    }
+  </style>
+</head>
+<body>
+
+<div class="payment-container">
+  <h2>Payment Information</h2>
+  <form class="payment-form" action="successOrder.html" method="get">
+    <div class="row">
+      <div class="small-12 columns">
+        <label for="cardNumber">Card Number:</label>
+        <input type="text" id="cardNumber" name="cardNumber" required>
+      </div>
+      <div class="small-12 columns">
+        <label for="cardHolderName">Card Holder Name:</label>
+        <input type="text" id="cardHolderName" name="cardHolderName" required>
+      </div>
+      <div class="small-12 columns">
+        <label for="expiryDate">Expiry Date:</label>
+        <input type="text" id="expiryDate" name="expiryDate" placeholder="MM/YYYY" required>
+      </div>
+      <div class="small-12 columns">
+        <label for="cvv">CVV:</label>
+        <input type="text" id="cvv" name="cvv" required>
+      </div>
+      <div class="small-12 columns">
+        <label for="billingAddress">Billing Address:</label>
+        <textarea id="billingAddress" name="billingAddress" required></textarea>
+      </div>
+      <div class="small-12 columns">
+        <input type="submit" value="Submit Payment">
+      </div>
+    </div>
+  </form>
+</div>
+
+
+</body>
+</html>
