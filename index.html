@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Responsive Cards and Navbar with Zurb Foundation</title>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/foundation-sites@6.6.3/dist/css/foundation.min.css">
+  <title>Foundation for Sites</title>
+  <link rel="stylesheet" href="css/foundation.css">
+  <link rel="stylesheet" href="css/app.css">
   <!-- <link rel="stylesheet" href="styles.css"> Your custom CSS file -->
   <style>
     /* Custom styles */
@@ -110,7 +112,7 @@
           <div class="navbar-menu">
            <a href="signup.html"><b>Join</b></a>
       <a href="#contact">Support</a>
-      <a href="#about">About</a>
+      <a href="about.html">About</a>
           </div>
         </div>
       </div>
@@ -124,16 +126,22 @@
     <div class="card">
       <h2>Make Money with your professsional gears</h2>
       <p>Rent, buy, and sell gear with trusted local creatives.</p>
-      <button>Learn More</button>
+      <!-- <button>Learn More</button> -->
+      <a href="about.html" class="button">Learn More</a>
+
     </div>
     <div class="card">
       <img src="images/lenovo.png"/>
       <p>Join 150,000+ Members
         Sharing $1 Billion+ of Gear</p>
-      <button><a href="signup.html">Join Now</a></button>
+      <!-- <button><a href="signup.html">Join Now</a></button> -->
+      <a href="signup.html" class="button">Join Now</a>
     </div>
   </div>
 </div>
-  
+<script src="js/vendor/jquery.js"></script>
+<script src="js/vendor/what-input.js"></script>
+<script src="js/vendor/foundation.js"></script>
+<script src="js/app.js"></script>
 </body>
 </html>
