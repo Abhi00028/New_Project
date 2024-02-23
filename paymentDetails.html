@@ -1,77 +1,101 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="utf-8">
-    <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>CAM_SHARE</title>
-  <link rel="stylesheet" href="css/foundation.css">
-  <link rel="stylesheet" href="css/app.css">
-</head>
-<body style="background-image: url(images/paymentDetails.jpg);
-background-repeat: no-repeat;
-background-size: 100% 100%;">
-<!-- Header -->
-<nav class="navbar">
-  <div class="grid-container">
-    <div class="grid-x align-middle">
-      <div class="cell small-12 medium-6">
-        <div class="navbar-brand">
-          <img src="images/CamShare logo-02.png" alt="Company Logo" width="50"> <a href="categories.html">CAM_SHARE</a>
+    <link rel="stylesheet" href="css/foundation.css" />
+    <link rel="stylesheet" href="css/app.css" />
+  </head>
+  <body
+    style="
+      background-image: url(images/paymentDetails.jpg);
+      background-repeat: no-repeat;
+      background-size: 100% 100%;
+    "
+  >
+    <!-- Header -->
+    <nav class="navbar">
+      <div class="grid-container">
+        <div class="grid-x align-middle">
+          <div class="cell small-12 medium-6">
+            <div class="navbar-brand">
+              <img
+                src="images/CamShare logo-02.png"
+                alt="Company Logo"
+                width="50"
+              />
+              <a href="categories.html">CAM_SHARE</a>
+            </div>
+          </div>
+
+          <div class="cell small-12 medium-6">
+            <div class="navbar-menu">
+              <a href="about.html">About</a>
+              <a href="listing.html">Listing</a>
+              <a href="camera.html">Camera</a>
+
+              <a href="videos.html">video</a>
+              <a href="accessories.html">Accessories</a>
+            </div>
+          </div>
         </div>
       </div>
-
-      <div class="cell small-12 medium-6">
-        <div class="navbar-menu">
-          <a href="about.html">About</a>
-          <a href="listing.html">Listing</a>
-          <a href="camera.html">Camera</a>
-
-    <a href="videos.html">video</a>
-    <a href="accessories.html">Accessories</a>
+    </nav>
+    <!-- code for payment details  -->
+    <div class="payment-container">
+      <h2>Payment Information</h2>
+      <form class="payment-form" action="successOrder.html" method="get">
+        <div class="row">
+          <div class="small-12 columns">
+            <label for="cardNumber">Card Number:</label>
+            <input type="text" id="cardNumber" name="cardNumber" required />
+          </div>
+          <div class="small-12 columns">
+            <label for="cardHolderName">Card Holder Name:</label>
+            <input
+              type="text"
+              id="cardHolderName"
+              name="cardHolderName"
+              required
+            />
+          </div>
+          <div class="small-12 columns">
+            <label for="expiryDate">Expiry Date:</label>
+            <input
+              type="text"
+              id="expiryDate"
+              name="expiryDate"
+              placeholder="MM/YYYY"
+              required
+            />
+          </div>
+          <div class="small-12 columns">
+            <label for="cvv">CVV:</label>
+            <input type="text" id="cvv" name="cvv" required />
+          </div>
+          <div class="small-12 columns">
+            <label for="billingAddress">Billing Address:</label>
+            <textarea
+              id="billingAddress"
+              name="billingAddress"
+              required
+            ></textarea>
+          </div>
+          <div class="small-12 columns">
+            <input type="submit" value="Submit Payment" />
+          </div>
         </div>
-      </div>
+      </form>
     </div>
-  </div>
-</nav>
-<!-- code for payment details  -->
-<div class="payment-container">
-  <h2>Payment Information</h2>
-  <form class="payment-form" action="successOrder.html" method="get">
-    <div class="row">
-      <div class="small-12 columns">
-        <label for="cardNumber">Card Number:</label>
-        <input type="text" id="cardNumber" name="cardNumber" required>
-      </div>
-      <div class="small-12 columns">
-        <label for="cardHolderName">Card Holder Name:</label>
-        <input type="text" id="cardHolderName" name="cardHolderName" required>
-      </div>
-      <div class="small-12 columns">
-        <label for="expiryDate">Expiry Date:</label>
-        <input type="text" id="expiryDate" name="expiryDate" placeholder="MM/YYYY" required>
-      </div>
-      <div class="small-12 columns">
-        <label for="cvv">CVV:</label>
-        <input type="text" id="cvv" name="cvv" required>
-      </div>
-      <div class="small-12 columns">
-        <label for="billingAddress">Billing Address:</label>
-        <textarea id="billingAddress" name="billingAddress" required></textarea>
-      </div>
-      <div class="small-12 columns">
-        <input type="submit" value="Submit Payment">
-      </div>
-    </div>
-  </form>
-</div>
- <!-- Footer -->
- <footer>
-  <p>&copy; 2024 Camera Rental App. All rights reserved.</p>
-</footer>
-<script src="js/vendor/jquery.js"></script>
+    <!-- Footer -->
+    <footer>
+      <p>&copy; 2024 Camera Rental App. All rights reserved.</p>
+    </footer>
+    <script src="js/vendor/jquery.js"></script>
     <script src="js/vendor/what-input.js"></script>
     <script src="js/vendor/foundation.js"></script>
     <script src="js/app.js"></script>
-</body>
+  </body>
 </html>
